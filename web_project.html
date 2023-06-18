@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP_Project</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="pro_size">
+        <div>
+            <ul class="menu">
+                <li class="logo">
+                    <a>PCH_PORTFOLIO</a>
+                </li>
+                <ul class="menu-items">
+                    <li><a href='/index.html'>MAIN</a></li>
+                    <li><a href='/project.html'>PROJECTS</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div id="title">
+            <h1>WEB</h1>
+        </div>
+        <div class="web_container">
+            <div class="arrow">
+                <button id="leftButton">&lt;</button>
+            </div>
+            <div class="web_box">
+                <div class="slide">
+                    <div class="data_list">
+                        <img
+                            src="https://static.wixstatic.com/media/72c0b2_903e9deafb9e4aff858c09a58c20ccce~mv2.jpg/v1/fill/w_640,h_384,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/72c0b2_903e9deafb9e4aff858c09a58c20ccce~mv2.jpg">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="data_list">
+                        <img
+                            src="https://designbase.co.kr/wp-content/uploads/2022/11/designreference_awwward-1920x1080.jpg">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="data_list">
+                        <img
+                            src="https://img.freepik.com/premium-psd/landing-page-design-layout-for-travel-website_213681-17.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">
+                <button id="rightButton">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="icon_contain">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+            </div>
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/59/59439.png">
+            </div>
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png">
+            </div>
+        </div>
+        <p>© 2023. Park Cheol Hyun. All rights reserved.</p>
+    </div>
+</body>
+<script>
+    const leftBtn = document.getElementById('leftButton');
+    const rightBtn = document.getElementById('rightButton');
+    const screen = document.getElementsByClassName('data_list')
+    var index = 0;
+    function show(n) {
+        for (var i = 0; i < screen.length; i++) {
+            screen[i].style.transform = "translateX(" + (-index * 100) + "%)";
+        }
+
+        if (index === screen.length - 1) {
+            rightBtn.style.display = "none"
+        }
+        else {
+            rightBtn.style.display = "block"
+        }
+        if (index === 0) {
+            leftBtn.style.display = "none"
+        }
+        else {
+            leftBtn.style.display = "block"
+        }
+    }
+    function left() {
+        index--;
+        show(index)
+    }
+    function right() {
+        index++;
+        show(index)
+    }
+    leftBtn.addEventListener("click", left);
+    rightBtn.addEventListener("click", right);
+    show(index)
+</script>
+
+</html>
